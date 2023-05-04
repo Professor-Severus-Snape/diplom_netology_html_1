@@ -1,0 +1,103 @@
+/* Добавляем шрифты (regular и bold):  */
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* универсальный селектор -> противоречит методологии БЭМ! */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "OpenSans", Arial, sans-serif;
+}
+
+/* баннер на всю ширину экрана */
+.header {
+  background-image: url("images/banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-color: #666666;
+}
+
+/* шапка сайта */
+.header__container {
+  box-sizing: border-box;
+  width: 1200px;
+  height: 450px;
+  padding: 29px 15px 0px;
+  margin: 0 auto;
+
+/*  для лучшей визуализации границ: */
+  outline: 2px solid red;
+}
+
+.header__top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 41px;
+
+  /*  для лучшей визуализации границ: */
+  outline: 2px dashed yellow;
+}
+
+.header__logo-image {
+  width: 179px;
+}
+
+.header__list {
+  display: flex;
+  list-style-type: none;
+}
+
+/* по методологии БЭМ лучше использовать доп.модификатор, а не псевдоклассы */
+/*.header__item:nth-child(n+2) {*/
+/* можно наверно и вовсе не убирать отступ у первого элемента.. */
+.header__item {
+  margin-left: 36px;
+}
+
+.header__link {
+  color: #fff;
+  font-size: 13px;
+/*  font-weight: 400;  - толщина задается сама.. */
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header__title {
+  max-width: 679px;
+/*  min-height: 110px;  - по идее не нужен.. */
+
+  /* верхний отступ = 125px(по макету) - 20px(съедает интерлиньяж) */
+  margin: 105px auto 0;
+
+  color: #fff;
+  font-size: 45px;
+/*  font-weight: 700;  - толщина задается сама.. */
+  line-height: 75px;
+  text-transform: uppercase;
+  text-align: center;
+
+  /*  для лучшей визуализации:*/
+  outline: 2px dashed yellow;
+}
+
+
+
+
+  
+
+
+
