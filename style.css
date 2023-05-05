@@ -1,14 +1,14 @@
-/* Добавляем шрифты (regular и bold):  */
+/* добавляем шрифты (normal и bold) */
 @font-face {
-  font-family: "OpenSans";
-  src: local("OpenSans"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
+  font-family: "opensans";
+  src: local("opensans"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "OpenSans";
-  src: local("OpenSans"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
+  font-family: "opensans";
+  src: local("opensans"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "OpenSans", Arial, sans-serif;
+  font-family: "opensans", "arial", sans-serif;
 }
 
 /* баннер на всю ширину экрана */
@@ -27,6 +27,20 @@
   background-size: cover;
   background-position: top center;
   background-color: #666666;
+/*  чтобы маска позиционировалась относительно header: */
+  position: relative;
+}
+
+/* добавление маски - с помощью ::after  */
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.6;
 }
 
 /* шапка сайта */
@@ -36,7 +50,10 @@
   height: 450px;
   padding: 29px 15px 0px;
   margin: 0 auto;
-
+/*  z-index задаем только контейнеру, а не маске */
+/*  тогда не надо заморачиваться с остальными z-index-ами! */
+  z-index: 1;
+  position: relative;
 /*  для лучшей визуализации границ: */
   outline: 2px solid red;
 }
@@ -45,10 +62,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 41px;
-
-  /*  для лучшей визуализации границ: */
+/*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
 }
 
@@ -71,26 +86,25 @@
 .header__link {
   color: #fff;
   font-size: 13px;
-/*  font-weight: 400;  - толщина задается сама.. */
+/*  font-weight: 400;*/
   text-transform: uppercase;
   text-decoration: none;
 }
 
+.header__link:hover {
+  text-decoration: underline;
+}
+
 .header__title {
-  max-width: 679px;
-/*  min-height: 110px;  - по идее не нужен.. */
-
-  /* верхний отступ = 125px(по макету) - 20px(съедает интерлиньяж) */
+  width: 679px;
   margin: 105px auto 0;
-
   color: #fff;
   font-size: 45px;
-/*  font-weight: 700;  - толщина задается сама.. */
+/*  font-weight: 700;*/
   line-height: 75px;
   text-transform: uppercase;
   text-align: center;
-
-  /*  для лучшей визуализации:*/
+  /*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
 }
 
