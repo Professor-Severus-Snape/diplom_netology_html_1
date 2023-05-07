@@ -20,6 +20,8 @@
   font-family: "opensans", "arial", sans-serif;
 }
 
+/******************************** блок header ********************************/
+
 /* баннер на всю ширину экрана */
 .header {
   background-image: url("images/banner.jpg");
@@ -104,14 +106,120 @@
   line-height: 75px;
   text-transform: uppercase;
   text-align: center;
-  /*  для лучшей визуализации границ: */
+/*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
 }
 
+.page {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 61px 15px 64px;
+/*  для лучшей визуализации границ: */
+  outline: 2px solid green;
+}
 
+/******************************** блок main ********************************/
+/* to do: немного уменьшить нижние марджины! */
 
-
+.page__main-container {
+  width: 778px;
+/*  для лучшей визуализации границ: */
+  outline: 2px solid blue;
+}
   
+.page__main-article {
+  display: flex;
+/*  для лучшей визуализации границ: */
+  outline: 2px dashed purple;
+}
+
+/* Вновь не по методологии БЭМ! */
+.page__main-article:nth-child(n+2) {
+  margin-top: 60px;
+}
+
+.page__main-img {
+  margin-right: 30px;
+  background-color: #eff6f1;
+/*  width: 381px;*/
+}
+
+.page__main-tag-list {
+  list-style-type: none;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+/* Вновь не по методологии БЭМ! */
+.page__main-tag-item:nth-child(n+2) {
+  margin-left: 20px;
+}
+
+.page__main-tag-link {
+  text-decoration: none;
+  color: #b59f5b;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.page__main-tag-link:hover {
+  text-decoration: underline;
+}
+
+.page__main-title {
+  /* чтобы заголовок в статье №6 переносился по макету */
+  max-width: 330px;
+  margin-bottom: 35px;
+}
+
+.page__main-title-link {
+  text-decoration: none;
+  color: #0f0d0e;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+/*  font-weight: 700;*/
+}
+
+.page__main-title-link:hover {
+  color: #b59f5b;
+}
+
+.page__main-date-author {
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+
+.page__main-date {
+  margin-right: 15px;
+  color: #888888;
+/*  font-weight: 400;*/
+}
+
+.page__main-author {
+  color: #000000;
+  font-weight: 700;
+}
+
+.page__main-content {
+  min-height: 62px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #0f0d0e;
+}
+
+/******************************** блок sidebar ********************************/
+
+.page__sidebar-container {
+  width: 272px;
+  /*  для лучшей визуализации границ: */
+  outline: 2px solid blue;
+}
 
 
 
