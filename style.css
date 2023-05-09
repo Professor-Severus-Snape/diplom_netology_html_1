@@ -247,5 +247,83 @@
   outline: 2px solid blue;
 }
 
+.page__sidebar-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #0f0d0e;
+/*  font-weight: 700;*/
+  text-align: center;
+}
+
+.page__sidebar-title::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+/*  margin: 14px auto 0;*/
+  margin: 11px auto 0px;
+  background-color: #b59f5b;
+  opacity: 0.4;
+}
+
+.page__sidebar-posts {
+  margin: 0 1px;
+}
+
+.page__sidebar-post {
+  display: flex;
+/*  для лучшей визуализации границ: */
+  outline: 1px dashed purple;
+}
+
+/* противоречит методологии БЭМ! */
+.page__sidebar-post:nth-of-type(n+2) {
+  margin-top: 22px;
+}
+
+/* модификатор: */
+.page__sidebar-post_first {
+  margin-top: 29px;
+}
+
+.page__sidebar-post-img {
+  width: 70px;
+  height: 70px;
+  background-color: #f4f7f6;
+  margin-right: 19px;
+}
+
+.page__sidebar-post-info {
+  width: 181px;
+}
+
+.page__sidebar-post-date {
+/*   дата - это inline, чтобы не было доп.отступа сверху делаем блочным! */
+  display: block;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.541;
+/*  font-weight: 400;*/
+}
+
+.page__sidebar-post-title {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+/*  margin-top: 9px;*/
+}
+
+.page__sidebar-post-title-link {
+  /*font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;*/
+  color: #000000;
+/*  font-weight: 700;*/
+  text-decoration: none;
+}
+
+.page__sidebar-post-title-link:hover {
+  color: #b59f5b;
+}
 
 
