@@ -14,6 +14,7 @@
 }
 
 /* универсальный селектор -> противоречит методологии БЭМ! */
+/* как от него избавиться??? */
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,9 @@
 }
 
 /******************************** блок header ********************************/
+/* to do: 
+1. добавить модификаторы классов;
+2. убрать обводку */
 
 /* баннер на всю ширину экрана */
 .header {
@@ -122,29 +126,51 @@
 }
 
 /******************************** блок main ********************************/
-/* to do: немного уменьшить нижние марджины! */
+/* to do: 
+1. немного уменьшить нижние марджины;
+2. добавить модификаторы классов;
+3. убрать обводку */
 
 .page__main-container {
   width: 778px;
 /*  для лучшей визуализации границ: */
   outline: 2px solid blue;
 }
-  
+
+/* доступное скрытие (согласно ТЗ) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} 
+
 .page__main-article {
   display: flex;
+/*  на случай, если картинка не загрузится: */
+  min-height: 294px;
 /*  для лучшей визуализации границ: */
   outline: 2px dashed purple;
 }
 
 /* Вновь не по методологии БЭМ! */
-.page__main-article:nth-child(n+2) {
+/* лучше дать дополнительный класс, имхо */
+.page__main-article:nth-of-type(n+2) {
   margin-top: 60px;
 }
 
 .page__main-img {
+  width: 381px;
   margin-right: 30px;
   background-color: #eff6f1;
-/*  width: 381px;*/
+}
+
+.page__main-info {
+  width: 367px;
 }
 
 .page__main-tag-list {
