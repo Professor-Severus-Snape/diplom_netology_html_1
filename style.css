@@ -534,20 +534,64 @@
   vertical-align: top;
 }
 
+/******************************** блок footer ********************************/
+.footer {
+  width: 1200px;
+  margin: 0 auto;
 
+  box-sizing: border-box;
+  padding: 0 15px 40px;
+/*  для лучшей визуализации границ: */
+  outline: 2px solid red;
+}
 
+.footer__social-list {
+  list-style-type: none;
+  height: 83px;
+  background-color: #f4f7f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/* чтобы не задавать марджины через псевдоклассы: */
+  gap: 30px;
+/*  для лучшей визуализации границ: */
+  outline: 1px dashed purple;
+}
 
+.footer__social-link {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 
+/* что если не загрузится фоновое изображение??? */
+/* есть ли аналог alt??? */
+/* и можно ли сделать иконки через img??? */
+.footer__social-link_dribbble {
+  background-image: url("images/icon_dribbble.svg");
+}
 
+.footer__social-link_pinterest {
+  background-image: url("images/icon_pinterest.svg");
+}
 
+.footer__social-link_tumblr {
+  background-image: url("images/icon_tumblr.svg");
+}
 
+.footer__copyrights {
+  margin-top: 74px;
+  text-align: center;
+/*  для лучшей визуализации границ: */
+  outline: 1px dashed purple;
+}
 
-
-
-
-
-
-
-
-
-
+.footer__copyrights-link {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999999;
+}
