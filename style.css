@@ -242,7 +242,9 @@
 /******************************** блок sidebar ********************************/
 /* to do: 
 1. подумать надо ли убирать нижние марджины у тегов;
-2. убрать обводку */
+2. поработать над вертикальными отступами - pixel perfect;
+3. сделать все по методологии БЭМ;
+4. убрать обводку */
 
 .page__sidebar-container {
   width: 272px;
@@ -448,6 +450,7 @@
   margin-bottom: 6px;
 }
 
+/* может лучше паддингами задать размер тегам.. */
 .page__sidebar-tag-item_fashion {
   width: 86px;
 }
@@ -488,6 +491,62 @@
   text-decoration: none;
   color: #0f0d0e;
 }
+
+.page__sidebar-themes {
+  margin-top: 61px;
+  margin-right: 1px;
+/*  для лучшей визуализации границ: */
+  outline: 1px dashed purple;
+}
+
+.page__sidebar-themes-list {
+  margin-top: 28px;
+  list-style-type: none;
+}
+
+.page__sidebar-themes-item {
+  font-size: 14px;
+  font-weight: 700;
+
+  display: block;
+  box-sizing: border-box;
+  height: 47px;
+/*  width: 271px;*/
+/* паддинги на глазок сделаны.. */
+  padding: 14px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page__sidebar-themes-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.page__sidebar-themes-link:hover {
+  color: #b59f5b;
+}
+
+.page__sidebar-themes-score {
+  color: #b59f5b;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 6px;
+  vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
