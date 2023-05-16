@@ -28,16 +28,17 @@
 
 /* баннер на всю ширину экрана */
 .header {
+  /*  чтобы маска позиционировалась относительно header: */
+  position: relative;
+
   background-image: url("images/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  background-color: #666666;
-/*  чтобы маска позиционировалась относительно header: */
-  position: relative;
+  background-color: #666;
 }
 
-/* добавление маски - с помощью ::after  */
+/* добавление маски: */
 .header::after {
   content: "";
   position: absolute;
@@ -45,21 +46,23 @@
   right: 0;
   bottom: 0;
   left: 0;
+
+/* по идее лучше использовать rgba, чтобы избавиться от opacity */
   background-color: #000;
   opacity: 0.6;
 }
 
 /* шапка сайта */
 .header__container {
-  box-sizing: border-box;
+  position: relative;
+  z-index: 1; /*  z-index задаем только контейнеру, а не маске */
+
   width: 1200px;
   height: 450px;
-  padding: 29px 15px 0px;
   margin: 0 auto;
-/*  z-index задаем только контейнеру, а не маске */
-/*  тогда не надо заморачиваться с остальными z-index-ами! */
-  z-index: 1;
-  position: relative;
+  padding: 29px 15px 0px;
+  box-sizing: border-box;
+
 /*  для лучшей визуализации границ: */
   outline: 2px solid red;
 }
@@ -69,6 +72,7 @@
   justify-content: space-between;
   align-items: center;
   height: 41px;
+
 /*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
 }
@@ -90,11 +94,11 @@
 }
 
 .header__link {
-  color: #fff;
   font-size: 13px;
 /*  font-weight: 400;*/
-  text-transform: uppercase;
   text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 .header__link:hover {
@@ -104,12 +108,14 @@
 .header__title {
   width: 679px;
   margin: 105px auto 0;
-  color: #fff;
+
   font-size: 45px;
 /*  font-weight: 700;*/
   line-height: 75px;
   text-transform: uppercase;
   text-align: center;
+  color: #fff;
+
 /*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
 }
@@ -119,8 +125,9 @@
   justify-content: space-between;
   width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box;
   padding: 61px 15px 64px;
+  box-sizing: border-box;
+  
 /*  для лучшей визуализации границ: */
   outline: 2px solid green;
 }
@@ -133,11 +140,12 @@
 
 .page__main-container {
   width: 778px;
+
 /*  для лучшей визуализации границ: */
   outline: 2px solid blue;
 }
 
-/* доступное скрытие (согласно ТЗ) */
+/* доступное скрытие - согласно ТЗ */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -151,8 +159,8 @@
 
 .page__main-article {
   display: flex;
-/*  на случай, если картинка не загрузится: */
-  min-height: 294px;
+  min-height: 294px;  /* если картинка не загрузится */
+
 /*  для лучшей визуализации границ: */
   outline: 2px dashed purple;
 }
@@ -166,6 +174,7 @@
 .page__main-img {
   width: 381px;
   margin-right: 30px;
+
   background-color: #eff6f1;
 }
 
@@ -174,9 +183,10 @@
 }
 
 .page__main-tag-list {
-  list-style-type: none;
   display: flex;
   margin-bottom: 10px;
+
+  list-style-type: none;
 }
 
 /* Вновь не по методологии БЭМ! */
@@ -185,11 +195,11 @@
 }
 
 .page__main-tag-link {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
   text-decoration: none;
   color: #b59f5b;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 700;
 }
 
 .page__main-tag-link:hover {
@@ -203,12 +213,12 @@
 }
 
 .page__main-title-link {
-  text-decoration: none;
-  color: #0f0d0e;
   font-size: 20px;
+/*  font-weight: 700;*/
   line-height: 24px;
   text-transform: uppercase;
-/*  font-weight: 700;*/
+  text-decoration: none;
+  color: #0f0d0e;
 }
 
 .page__main-title-link:hover {
@@ -217,23 +227,26 @@
 
 .page__main-date-author {
   display: flex;
-  font-size: 12px;
   margin-bottom: 50px;
+
+  font-size: 12px;
 }
 
 .page__main-date {
   margin-right: 15px;
-  color: #888888;
-/*  font-weight: 400;*/
+
+  /*  font-weight: 400;*/
+  color: #888;
 }
 
 .page__main-author {
-  color: #000000;
   font-weight: 700;
+  color: #000;
 }
 
 .page__main-content {
   min-height: 62px;
+
   font-size: 15px;
   line-height: 22px;
   color: #0f0d0e;
@@ -248,16 +261,17 @@
 
 .page__sidebar-container {
   width: 272px;
-  /*  для лучшей визуализации границ: */
+
+/*  для лучшей визуализации границ: */
   outline: 2px solid blue;
 }
 
 .page__sidebar-title {
   font-size: 14px;
-  text-transform: uppercase;
-  color: #0f0d0e;
 /*  font-weight: 700;*/
   text-align: center;
+  text-transform: uppercase;
+  color: #0f0d0e;
 }
 
 .page__sidebar-title::after {
@@ -267,6 +281,8 @@
   height: 3px;
 /*  margin: 14px auto 0;*/
   margin: 11px auto 0;
+
+/*  лучше, наверно, использовать rgba.. */
   background-color: #b59f5b;
   opacity: 0.4;
 }
@@ -277,6 +293,7 @@
 
 .page__sidebar-post {
   display: flex;
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
@@ -294,8 +311,9 @@
 .page__sidebar-post-img {
   width: 70px;
   height: 70px;
-  background-color: #f4f7f6;
   margin-right: 19px;
+
+  background-color: #f4f7f6;
 }
 
 .page__sidebar-post-info {
@@ -305,23 +323,26 @@
 .page__sidebar-post-date {
 /*   дата - это inline, чтобы не было доп.отступа сверху делаем блочным! */
   display: block;
+
   font-size: 12px;
-  color: #000000;
+/*  font-weight: 400; */
+/*  лучше, наверно, использовать rgba.. */
+  color: #000;
   opacity: 0.541;
-/*  font-weight: 400;*/
 }
 
 .page__sidebar-post-title {
+  /*  margin-top: 9px;*/
+
   font-size: 14px;
+/*  font-weight: 700;*/
   line-height: 18px;
   text-transform: uppercase;
-/*  font-weight: 700;*/
-/*  margin-top: 9px;*/
 }
 
 .page__sidebar-post-title-link {
-  color: #000000;
   text-decoration: none;
+  color: #000;
 }
 
 .page__sidebar-post-title-link:hover {
@@ -334,19 +355,23 @@
   width: 270px;
   height: 48px;
   margin: 60px 1px 0;
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
 
 .page__sidebar-search-field {
-  height: 48px;
   width: 222px;
+  height: 48px;
   padding: 19px;
   border: none;
-  background-color: #f4f7f6;
-  opacity: 0.541;
+
   font-size: 13px;
-  color: #000000;
+  /*  лучше, наверно, использовать rgba.. */
+  color: #000;
+  opacity: 0.541;
+
+  background-color: #f4f7f6;
 }
 
 .page__sidebar-search-field:focus {
@@ -355,9 +380,8 @@
 }
 
 .page__sidebar-search-button {
-  height: 48px;
   width: 48px;
-  background-color: #b59f5b;
+  height: 48px;
   border: none;
 
   background-image: url("images/search.svg");
@@ -374,27 +398,30 @@
 .page__sidebar-subscribe {
   width: 270px;
   margin: 62px 1px 0;  /* реально - меньше! */
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
 
 .page__sidebar-subscribe-form {
-  margin-top: 23px;
   display: flex;
   flex-direction: column;
+  margin-top: 23px;
 }
 
 .page__sidebar-subscribe-field {
-  box-sizing: border-box;
-  height: 48px;
   width: 270px;
+  height: 48px;
   padding: 19px;
   border: none;
+  box-sizing: border-box;
+
+  font-size: 13px;
+  /*  лучше, наверно, использовать rgba.. */
+  color: #000;
+  opacity: 0.541;
 
   background-color: #f4f7f6;
-  font-size: 13px;
-  color: #000000;
-  opacity: 0.541;
 }
 
 .page__sidebar-subscribe-field:focus {
@@ -403,17 +430,17 @@
 }
 
 .page__sidebar-subscribe-button {
-  height: 48px;
   width: 270px;
-  border: none;
+  height: 48px;
   margin-top: 17px;
-
-  background-color: #b59f5b;
+  border: none;
 
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
+
+  background-color: #b59f5b;
 }
 
 .page__sidebar-subscribe-button:hover {
@@ -422,6 +449,7 @@
 
 .page__sidebar-tags {
   margin: 61px 1px 0;  /* реально - меньше! */
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
@@ -429,25 +457,25 @@
 .page__sidebar-tag-list {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 24px;
 
   list-style-type: none;
-  margin-top: 24px;
 }
 
 .page__sidebar-tag-item {
+  min-height: 30px;
+  margin-right: 5px;
+  margin-bottom: 6px;
+  padding: 8px 0;
+  border: 3px solid #eee;
+  box-sizing: border-box;
+
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-/*  background-color: rgba(244, 243, 241, 0);*/
   text-align: center;
-/*  vertical-align: middle;*/
   
-  box-sizing: border-box;
-  min-height: 30px;
-  border: 3px solid #eeeeee;
-  padding: 8px 0;
-  margin-right: 5px;
-  margin-bottom: 6px;
+/*  background-color: rgba(244, 243, 241, 0);*/
 }
 
 /* может лучше паддингами задать размер тегам.. */
@@ -495,6 +523,7 @@
 .page__sidebar-themes {
   margin-top: 61px;
   margin-right: 1px;
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
@@ -505,21 +534,21 @@
 }
 
 .page__sidebar-themes-item {
-  font-size: 14px;
-  font-weight: 700;
-
   display: block;
-  box-sizing: border-box;
-  height: 47px;
 /*  width: 271px;*/
+  height: 47px;
 /* паддинги на глазок сделаны.. */
   padding: 14px 0;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .page__sidebar-themes-link {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 .page__sidebar-themes-link:hover {
@@ -527,33 +556,36 @@
 }
 
 .page__sidebar-themes-score {
-  color: #b59f5b;
+  margin-left: 6px;
+
   font-size: 12px;
   font-weight: 700;
-  margin-left: 6px;
   vertical-align: top;
+  color: #b59f5b;
 }
 
 /******************************** блок footer ********************************/
 .footer {
   width: 1200px;
   margin: 0 auto;
-
-  box-sizing: border-box;
   padding: 0 15px 40px;
+  box-sizing: border-box;
+  
 /*  для лучшей визуализации границ: */
   outline: 2px solid red;
 }
 
 .footer__social-list {
-  list-style-type: none;
-  height: 83px;
-  background-color: #f4f7f6;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 83px;
 /* чтобы не задавать марджины через псевдоклассы: */
   gap: 30px;
+
+  background-color: #f4f7f6;
+  list-style-type: none;
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
@@ -562,14 +594,15 @@
   display: block;
   width: 20px;
   height: 20px;
+
   background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
+  background-position: center center;
 }
 
 /* что если не загрузится фоновое изображение??? */
 /* есть ли аналог alt??? */
-/* и можно ли сделать иконки через img??? */
+/* почему нельзя сделать иконки через img??? */
 .footer__social-link_dribbble {
   background-image: url("images/icon_dribbble.svg");
 }
@@ -584,14 +617,16 @@
 
 .footer__copyrights {
   margin-top: 74px;
+
   text-align: center;
+
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
 }
 
 .footer__copyrights-link {
-  text-decoration: none;
   font-size: 12px;
   font-weight: 700;
-  color: #999999;
+  text-decoration: none;
+  color: #999;
 }
