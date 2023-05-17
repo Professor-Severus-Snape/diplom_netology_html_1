@@ -3,6 +3,7 @@
   src: local("opensans"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: local("opensans"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 /* универсальный селектор -> противоречит методологии БЭМ! */
@@ -53,7 +55,7 @@
   z-index: 1; /*  z-index задаем только контейнеру, а не маске */
 
   width: 1200px;
-  height: 450px;
+  min-height: 450px;
   margin: 0 auto;
   padding: 29px 15px 0px;
   box-sizing: border-box;
@@ -149,7 +151,6 @@
 
 .page__main-article {
   display: flex;
-  min-height: 294px;  /* если картинка не загрузится */
 
 /*  для лучшей визуализации границ: */
   outline: 2px dashed purple;
@@ -162,6 +163,8 @@
 
 .page__main-img {
   width: 381px;
+  min-height: 294px;  /* если картинка не загрузится */
+  max-height: 500px;
   margin-right: 30px;
   background-color: #eff6f1;
 }
@@ -172,13 +175,10 @@
 
 .page__main-tag-list {
   display: flex;
-  margin-bottom: 10px;
+  /*  разместит теги если они будут в несколько строк: */
+  flex-wrap: wrap;
+  gap: 0 20px;
   list-style-type: none;
-}
-
-/* модификатор: */
-.page__main-tag-item_next {
-  margin-left: 20px;
 }
 
 .page__main-tag-link {
@@ -194,9 +194,8 @@
 }
 
 .page__main-title {
-  /* чтобы заголовок в статье №6 переносился по макету */
-  max-width: 330px;
-  margin-bottom: 35px;
+  /* 37px - чтобы заголовок в статье №6 переносился по макету */
+  margin: 10px 37px 35px 0;
 }
 
 .page__main-title-link {
@@ -218,11 +217,11 @@
 }
 
 .page__main-date {
-  margin-right: 15px;
   color: #888;
 }
 
 .page__main-author {
+  margin-left: 15px;
   font-weight: 700;
   color: #000;
 }
@@ -263,7 +262,7 @@
 }
 
 .page__sidebar-posts {
-  margin: 0 1px;
+  margin: 0 1px 62px;  /* - исправить согласно pixel perfect */
 }
 
 .page__sidebar-post {
@@ -321,7 +320,7 @@
   display: flex;
   width: 270px;
   height: 48px;
-  margin: 60px 1px 0;
+  margin: 0 1px 61px;
 
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
@@ -359,7 +358,7 @@
 
 .page__sidebar-subscribe {
   width: 270px;
-  margin: 62px 1px 0; /* - исправить согласно pixel perfect */
+  margin: 0 1px 61px; /* - исправить согласно pixel perfect */
 
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
@@ -404,7 +403,7 @@
 }
 
 .page__sidebar-tags {
-  margin: 61px 1px 0; /* - исправить согласно pixel perfect */
+  margin: 0 1px 61px; /* - исправить согласно pixel perfect */
 
 /*  для лучшей визуализации границ: */
   outline: 1px dashed purple;
@@ -480,7 +479,6 @@
 }
 
 .page__sidebar-themes {
-  margin-top: 61px;
   margin-right: 1px;
 
 /*  для лучшей визуализации границ: */
