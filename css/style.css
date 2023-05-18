@@ -1,6 +1,6 @@
 @font-face {
   font-family: "opensans";
-  src: local("opensans"), url("fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
+  src: local("opensans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "opensans";
-  src: local("opensans"), url("fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
+  src: local("opensans"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -31,7 +31,7 @@
   /*  чтобы маска позиционировалась относительно header: */
   position: relative;
 
-  background-image: url("images/banner.jpg");
+  background-image: url("../images/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -72,6 +72,11 @@
 
 /*  для лучшей визуализации границ: */
   outline: 2px dashed yellow;
+}
+
+.header__logo-link {
+/*  font-size: 20px;*/
+  color: #fff;
 }
 
 .header__logo-image {
@@ -345,7 +350,7 @@
   width: 48px;
   height: 48px;
   border: none;
-  background-image: url("images/search.svg");
+  background-image: url("../svg/search.svg");
   background-size: 18px;
   background-color: #b59f5b;
   background-repeat: no-repeat;
@@ -412,14 +417,13 @@
 .page__sidebar-tag-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 6px 5px;
   margin-top: 24px;
   list-style-type: none;
 }
 
 .page__sidebar-tag-item {
   min-height: 30px;
-  margin-right: 5px;
-  margin-bottom: 6px;
   padding: 8px 0;
   border: 3px solid #eee;
   box-sizing: border-box;
@@ -554,15 +558,15 @@
 /* есть ли аналог alt??? */
 /* почему нельзя сделать иконки через img??? */
 .footer__social-link_dribbble {
-  background-image: url("images/icon_dribbble.svg");
+  background-image: url("../svg/icon_dribbble.svg");
 }
 
 .footer__social-link_pinterest {
-  background-image: url("images/icon_pinterest.svg");
+  background-image: url("../svg/icon_pinterest.svg");
 }
 
 .footer__social-link_tumblr {
-  background-image: url("images/icon_tumblr.svg");
+  background-image: url("../svg/icon_tumblr.svg");
 }
 
 .footer__copyrights {
