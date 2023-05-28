@@ -14,11 +14,12 @@
   font-display: swap;
 }
 
-/* универсальный селектор -> противоречит методологии БЭМ! */
-/* как от него избавиться??? */
+/* универсальный селектор -> противоречит методологии БЭМ? */
+/* надо ли от него избавляться??? */
 * {
   margin: 0;
   padding: 0;
+/*  box-sizing: border-box;*/
   font-family: "opensans", "arial", sans-serif;
 }
 
@@ -52,7 +53,7 @@
   width: 1200px;
   min-height: 450px;
   margin: 0 auto;
-  padding: 29px 15px 0px;
+  padding: 28px 15px 0px;
   box-sizing: border-box;
 /*  для лучшей визуализации границ: */
 /*  outline: 2px solid red;*/
@@ -62,6 +63,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+/* на случай, если логотип не загрузится: */
   height: 41px;
 /*  для лучшей визуализации границ: */
 /*  outline: 2px dashed yellow;*/
@@ -95,7 +97,7 @@
 
 .header__title {
   width: 679px;
-  margin: 103px auto 0;
+  margin: 104px auto 0;
   font-size: 45px;
   line-height: 75px;
   text-transform: uppercase;
@@ -142,8 +144,8 @@
 /*  outline: 2px dashed purple;*/
 }
 
-.page__main-article_next {
-  margin-top: 60px;
+.page__main-article:not(:last-child) {
+  margin-bottom: 60px;
 }
 
 .page__main-img {
@@ -237,7 +239,7 @@
   display: block;
   width: 66px;
   height: 3px;
-  margin: 8px auto 0;
+  margin: 8px auto 24px;
   background-color: rgba(181, 159, 91, 0.4);
 }
 
@@ -251,12 +253,8 @@
 /*  outline: 1px dashed purple;*/
 }
 
-.page__sidebar-post_first {
-  margin-top: 24px;
-}
-
-.page__sidebar-post_next {
-  margin-top: 22px;
+.page__sidebar-post:not(:last-child) {
+  margin-bottom: 22px;
 }
 
 .page__sidebar-post-img {
@@ -347,6 +345,7 @@
 .page__sidebar-subscribe-field {
   width: 270px;
   height: 48px;
+  margin-bottom: 19px;
   padding: 18px;
   border: none;
   box-sizing: border-box;
@@ -363,7 +362,6 @@
 .page__sidebar-subscribe-button {
   width: 270px;
   height: 48px;
-  margin-top: 19px;
   border: none;
   font-size: 14px;
   font-weight: 700;
@@ -455,12 +453,15 @@
 
 .page__sidebar-themes-item {
   display: block;
-  height: 47px;
-  padding: 13px 0;
+  padding-bottom: 14px;
   border-bottom: 1px solid #eee;
   box-sizing: border-box;
   font-size: 14px;
   font-weight: 700;
+}
+
+.page__sidebar-themes-item:not(:first-child) {
+  padding-top: 13px;
 }
 
 .page__sidebar-themes-link {
@@ -495,6 +496,7 @@
   justify-content: center;
   align-items: center;
   height: 83px;
+  margin-bottom: 67px;
   gap: 26px;
   background-color: #f4f7f6;
   list-style-type: none;
@@ -526,7 +528,6 @@
 }
 
 .footer__copyrights {
-  margin-top: 67px;
   text-align: center;
 /*  для лучшей визуализации границ: */
 /*  outline: 1px dashed purple;*/
