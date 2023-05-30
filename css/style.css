@@ -1,6 +1,6 @@
 @font-face {
   font-family: "opensans";
-  src: local("opensans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("fonts/OpenSans-Regular.ttf") format("truetype");
+  src: local("opensans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "opensans";
-  src: local("opensans"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("fonts/OpenSans-Bold.ttf") format("truetype");
+  src: local("opensans"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -140,6 +140,8 @@
 
 .page__main-article {
   display: flex;
+/*  чтобы картинка не растягивалась при добавлении текста:*/
+  align-items: flex-start;
 /*  для лучшей визуализации границ: */
 /*  outline: 2px dashed purple;*/
 }
@@ -150,8 +152,7 @@
 
 .page__main-img {
   width: 381px;
-  min-height: 294px;  /* если картинка не загрузится */
-  max-height: 500px;
+  height: 294px;  /* если картинка не загрузится */
   margin-right: 30px;
   background-color: #eff6f1;
 }
@@ -249,6 +250,8 @@
 
 .page__sidebar-post {
   display: flex;
+/*  чтобы картинка не растягивалась при добавлении текста:*/
+/*  align-items: flex-start;*/
 /*  для лучшей визуализации границ: */
 /*  outline: 1px dashed purple;*/
 }
@@ -259,7 +262,7 @@
 
 .page__sidebar-post-img {
   width: 70px;
-  height: 70px;
+  height: 70px;  /* если картинка не загрузится */
   margin-right: 19px;
   background-color: #f4f7f6;
 }
