@@ -1,3 +1,7 @@
+:root { 
+  --color-style: #b59f5b;
+}
+
 @font-face {
   font-family: "opensans";
   src: local("opensans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
@@ -19,11 +23,12 @@
 * {
   margin: 0;
   padding: 0;
-/*  box-sizing: border-box;*/
-  font-family: "opensans", "arial", sans-serif;
+  box-sizing: border-box;
+
+  font-family: "opensans", "arial", sans-serif;  /* указывать для * или body ??? */
 }
 
-/******************************** блок header ********************************/
+/* ============================== header ============================== */
 
 /* баннер на всю ширину экрана */
 .header {
@@ -54,24 +59,23 @@
   min-height: 450px;
   margin: 0 auto;
   padding: 28px 15px 0px;
-  box-sizing: border-box;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px solid red;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px solid red; */
 }
 
 .header__top-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-/* на случай, если логотип не загрузится: */
-  height: 41px;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px dashed yellow;*/
+  height: 41px;  /* на случай, если логотип не загрузится */
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px dashed yellow; */
 }
 
 .header__logo-link {
-/* на случай, если логотип не загрузится */
-  color: #fff;
+  color: #fff;  /* на случай, если логотип не загрузится */
 }
 
 .header__logo-image {
@@ -103,8 +107,9 @@
   text-transform: uppercase;
   text-align: center;
   color: #fff;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px dashed yellow;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px dashed yellow; */
 }
 
 .page {
@@ -113,17 +118,18 @@
   width: 1200px;
   margin: 0 auto;
   padding: 62px 15px 66px;
-  box-sizing: border-box;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px solid green;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px solid green; */
 }
 
-/******************************** блок main ********************************/
+/* ============================== main ============================== */
 
 .page__main-container {
   width: 778px;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px solid blue;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px solid blue; */
 }
 
 /* доступное скрытие - согласно ТЗ */
@@ -140,10 +146,11 @@
 
 .page__main-article {
   display: flex;
-/*  чтобы картинка не растягивалась при добавлении текста:*/
-  align-items: flex-start;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px dashed purple;*/
+  /* чтобы картинка не растягивалась при добавлении текста: */
+  /* align-items: flex-start; */
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px dashed purple; */
 }
 
 .page__main-article:not(:last-child) {
@@ -163,8 +170,7 @@
 
 .page__main-tag-list {
   display: flex;
-  /*  разместит теги если они будут в несколько строк: */
-  flex-wrap: wrap;
+  flex-wrap: wrap;  /* разместит теги, если они будут в несколько строк */
   gap: 0 20px;
   list-style-type: none;
 }
@@ -174,7 +180,7 @@
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
-  color: #b59f5b;
+  color: var(--color-style);
 }
 
 .page__main-tag-link:hover {
@@ -195,7 +201,7 @@
 }
 
 .page__main-title-link:hover {
-  color: #b59f5b;
+  color: var(--color-style);
 }
 
 .page__main-date-author {
@@ -220,12 +226,13 @@
   color: #0f0d0e;
 }
 
-/******************************** блок sidebar ********************************/
+/* ============================== sidebar ============================== */
 
 .page__sidebar-container {
   width: 272px;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px solid blue;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px solid blue; */
 }
 
 .page__sidebar-title {
@@ -250,10 +257,11 @@
 
 .page__sidebar-post {
   display: flex;
-/*  чтобы картинка не растягивалась при добавлении текста:*/
-/*  align-items: flex-start;*/
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+  /* чтобы картинка не растягивалась при добавлении текста: */
+  /* align-items: flex-start; */
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .page__sidebar-post:not(:last-child) {
@@ -272,7 +280,7 @@
 }
 
 .page__sidebar-post-date {
-/*   дата - это inline, чтобы не было доп.отступа сверху делаем блочным! */
+/* дата - это inline, чтобы не было доп.отступа сверху делаем блочным! */
   display: block;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.541);
@@ -290,7 +298,7 @@
 }
 
 .page__sidebar-post-title-link:hover {
-  color: #b59f5b;
+  color: var(--color-style);
 }
 
 .page__sidebar-search-form {
@@ -298,8 +306,9 @@
   width: 270px;
   height: 48px;
   margin: 0 1px 58px;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .page__sidebar-search-field {
@@ -313,7 +322,7 @@
 }
 
 .page__sidebar-search-field:focus {
-  border: 1px solid #b59f5b;
+  border: 1px solid var(--color-style);
   outline: none;
 }
 
@@ -323,7 +332,7 @@
   border: none;
   background-image: url("../svg/search.svg");
   background-size: 18px;
-  background-color: #b59f5b;
+  background-color: var(--color-style);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -335,8 +344,9 @@
 .page__sidebar-subscribe {
   width: 270px;
   margin: 0 1px 57px;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .page__sidebar-subscribe-form {
@@ -351,14 +361,13 @@
   margin-bottom: 19px;
   padding: 18px;
   border: none;
-  box-sizing: border-box;
   font-size: 13px;
   color: rgba(0, 0, 0, 0.541);
   background-color: #f4f7f6;
 }
 
 .page__sidebar-subscribe-field:focus {
-  border: 1px solid #b59f5b;
+  border: 1px solid var(--color-style);
   outline: none;
 }
 
@@ -370,7 +379,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  background-color: #b59f5b;
+  background-color: var(--color-style);
 }
 
 .page__sidebar-subscribe-button:hover {
@@ -379,8 +388,9 @@
 
 .page__sidebar-tags {
   margin: 0 1px 56px;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .page__sidebar-tag-list {
@@ -395,7 +405,6 @@
   min-height: 30px;
   padding: 3px 0;
   border: 3px solid #eee;
-  box-sizing: border-box;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -435,7 +444,7 @@
 }
 
 .page__sidebar-tag-item:hover {
-  border: 3px solid #b59f5b;
+  border: 3px solid var(--color-style);
 }
 
 .page__sidebar-tag-link {
@@ -445,8 +454,9 @@
 
 .page__sidebar-themes {
   margin-right: 1px;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .page__sidebar-themes-list {
@@ -458,7 +468,6 @@
   display: block;
   padding-bottom: 14px;
   border-bottom: 1px solid #eee;
-  box-sizing: border-box;
   font-size: 14px;
   font-weight: 700;
 }
@@ -473,7 +482,7 @@
 }
 
 .page__sidebar-themes-link:hover {
-  color: #b59f5b;
+  color: var(--color-style);
 }
 
 .page__sidebar-themes-score {
@@ -481,17 +490,18 @@
   font-size: 12px;
   font-weight: 700;
   vertical-align: top;
-  color: #b59f5b;
+  color: var(--color-style);
 }
 
-/******************************** блок footer ********************************/
+/* ============================== footer ============================== */
+
 .footer {
   width: 1200px;
   margin: 0 auto;
   padding: 0 15px 40px;
-  box-sizing: border-box;
-/*  для лучшей визуализации границ: */
-/*  outline: 2px solid red;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 2px solid red; */
 }
 
 .footer__social-list {
@@ -503,8 +513,9 @@
   gap: 26px;
   background-color: #f4f7f6;
   list-style-type: none;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .footer__social-link {
@@ -532,8 +543,9 @@
 
 .footer__copyrights {
   text-align: center;
-/*  для лучшей визуализации границ: */
-/*  outline: 1px dashed purple;*/
+
+  /* для лучшей визуализации границ: */
+  /* outline: 1px dashed purple; */
 }
 
 .footer__copyrights-link {
