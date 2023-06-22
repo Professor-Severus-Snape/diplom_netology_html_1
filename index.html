@@ -15,15 +15,13 @@
         
         <div class="header__top-container">
 
-          <!-- у логотипа на главной странице: не указывают href || href="/" || href="#0" ??? -->
-          <a class="header__logo-link" href="#0">
+          <a class="header__logo-link" href="/">
             <img class="header__logo-image" src="svg/noemi-logo.svg" alt="логотип Noemi">
           </a>
 
           <nav class="header__menu">
             <ul class="header__list">
-              <!-- у ссылки 'главная': не указывают href || href="/" || href="#0" ??? -->
-              <li class="header__item"><a class="header__link" href="#0">главная</a></li>
+              <li class="header__item"><a class="header__link" href="/">главная</a></li>
               <li class="header__item"><a class="header__link" href="#0">посты</a></li>
               <li class="header__item"><a class="header__link" href="#0">статьи</a></li>
               <li class="header__item"><a class="header__link" href="#0">теги</a></li>
@@ -209,7 +207,7 @@
 
         <section class="page__sidebar-posts">
           
-          <h2 class="page__sidebar-title">Новые посты</h2>
+          <h2 class="page__sidebar-title page__sidebar-title_posts">Новые посты</h2>
 
           <article class="page__sidebar-post">
             
@@ -275,11 +273,8 @@
         </section>
 
         <form class="page__sidebar-search-form" action="#0">
-          <!-- метка для скринридеров и Tab -->
-          <label>
-            <span class="visually-hidden">Поиск</span>
-            <input class="page__sidebar-search-field" type="search" placeholder="Найти..." required>
-          </label>
+          <label class="visually-hidden" for="search">Поиск</label>
+          <input class="page__sidebar-search-field" type="search" id="search" placeholder="Найти..." required>
           <button class="page__sidebar-search-button" type="submit">
             <span class="visually-hidden">Поиск</span>
           </button>
@@ -287,14 +282,11 @@
 
         <section class="page__sidebar-subscribe">
 
-          <h2 class="page__sidebar-title">Рассылка</h2>
+          <h2 class="page__sidebar-title page__sidebar-title_subscribe">Рассылка</h2>
 
           <form class="page__sidebar-subscribe-form" action="#0">
-            <!-- метка для скринридеров и Tab -->
-            <label>
-              <span class="visually-hidden">Введите email</span>
-              <input class="page__sidebar-subscribe-field" type="email" placeholder="Ваш email-адрес" required>
-            </label>
+            <label class="visually-hidden" for="subscribe">Введите email</label>
+            <input class="page__sidebar-subscribe-field" type="email" id="subscribe" placeholder="Ваш email-адрес" required>
             <button class="page__sidebar-subscribe-button" type="submit">Подписаться</button>
           </form>
 
@@ -302,7 +294,7 @@
 
         <section class="page__sidebar-tags">
 
-          <h2 class="page__sidebar-title">Теги</h2>
+          <h2 class="page__sidebar-title page__sidebar-title_tags">Теги</h2>
 
           <ul class="page__sidebar-tag-list">
             <li class="page__sidebar-tag-item page__sidebar-tag-item_fashion">
@@ -335,7 +327,7 @@
 
         <section class="page__sidebar-themes">
 
-          <h2 class="page__sidebar-title">Темы</h2>
+          <h2 class="page__sidebar-title page__sidebar-title_themes">Темы</h2>
 
           <ul class="page__sidebar-themes-list">
             <li class="page__sidebar-themes-item">
@@ -371,21 +363,18 @@
 
         <li class="footer__social-item">
           <a class="footer__social-link footer__social-link_dribbble" href="#0">
-            <!-- текстовое описание ссылки для скринридеров -->
             <span class="visually-hidden">Dribbble</span>
           </a>
         </li>
 
         <li class="footer__social-item">
           <a class="footer__social-link footer__social-link_pinterest" href="#0">
-            <!-- текстовое описание ссылки для скринридеров -->
             <span class="visually-hidden">Pinterest</span>
           </a>
         </li>
 
         <li class="footer__social-item">
           <a class="footer__social-link footer__social-link_tumblr" href="#0">
-            <!-- текстовое описание ссылки для скринридеров -->
             <span class="visually-hidden">Tumblr</span>
           </a>
         </li>

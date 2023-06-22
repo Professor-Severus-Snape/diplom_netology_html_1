@@ -32,7 +32,6 @@
 
 /* баннер на всю ширину экрана */
 .header {
-  /*  чтобы маска позиционировалась относительно header: */
   position: relative;
   background-image: url("../images/banner.jpg");
   background-repeat: no-repeat;
@@ -58,7 +57,7 @@
   width: 1200px;
   min-height: 450px;
   margin: 0 auto;
-  padding: 28px 15px 0px;
+  padding: 28px 15px 28px;
 
   /* для лучшей визуализации границ: */
   /* outline: 2px solid red; */
@@ -100,7 +99,7 @@
 }
 
 .header__title {
-  width: 679px;
+  width: 690px;
   margin: 104px auto 0;
   font-size: 45px;
   line-height: 75px;
@@ -140,7 +139,8 @@
   margin: -1px;
   padding: 0;
   border: 0;
-  clip: rect(0 0 0 0);
+/*  clip: rect(0 0 0 0); -> устаревшее свойство! */
+  clip-path: circle(0);
   overflow: hidden;
 } 
 
@@ -175,6 +175,10 @@
   list-style-type: none;
 }
 
+.page__main-tag-item {
+  line-height: 14px;
+}
+
 .page__main-tag-link {
   font-size: 14px;
   font-weight: 700;
@@ -188,15 +192,17 @@
 }
 
 .page__main-title {
-  /* 37px - чтобы заголовок в статье №6 переносился по макету */
-  margin: 1px 37px 26px 0;
+  /* 35px - чтобы заголовок в статье №6 переносился по макету */
+  margin: 10px 35px 28px 0;
+  line-height: 24px;
 }
 
 .page__main-title-link {
+  display: block;
   font-size: 20px;
-  line-height: 24px;
   text-transform: uppercase;
   text-decoration: none;
+  letter-spacing: .1px;
   color: #0f0d0e;
 }
 
@@ -206,7 +212,7 @@
 
 .page__main-date-author {
   display: flex;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
   font-size: 12px;
 }
 
@@ -223,6 +229,7 @@
 .page__main-content {
   min-height: 53px;
   font-size: 15px;
+  line-height: 22px;
   color: #0f0d0e;
 }
 
@@ -237,9 +244,15 @@
 
 .page__sidebar-title {
   font-size: 14px;
+  line-height: 12px;
   text-align: center;
   text-transform: uppercase;
   color: #0f0d0e;
+}
+
+/* модификатор */
+.page__sidebar-title_posts {
+  margin-bottom: 29px;
 }
 
 .page__sidebar-title::after {
@@ -247,12 +260,12 @@
   display: block;
   width: 66px;
   height: 3px;
-  margin: 8px auto 24px;
+  margin: 13px auto 0;
   background-color: rgba(181, 159, 91, 0.4);
 }
 
 .page__sidebar-posts {
-  margin: 0 1px 62px;
+  margin: 0 1px 60px;
 }
 
 .page__sidebar-post {
@@ -282,7 +295,9 @@
 .page__sidebar-post-date {
 /* дата - это inline, чтобы не было доп.отступа сверху делаем блочным! */
   display: block;
+  margin-bottom: 5px;
   font-size: 12px;
+  line-height: 9px;
   color: rgba(0, 0, 0, 0.541);
 }
 
@@ -305,7 +320,7 @@
   display: flex;
   width: 270px;
   height: 48px;
-  margin: 0 1px 58px;
+  margin: 0 1px 60px;
 
   /* для лучшей визуализации границ: */
   /* outline: 1px dashed purple; */
@@ -343,16 +358,20 @@
 
 .page__sidebar-subscribe {
   width: 270px;
-  margin: 0 1px 57px;
+  margin: 0 1px 60px;
 
   /* для лучшей визуализации границ: */
   /* outline: 1px dashed purple; */
 }
 
+/* модификатор */
+.page__sidebar-title_subscribe {
+  margin-bottom: 23px;
+}
+
 .page__sidebar-subscribe-form {
   display: flex;
   flex-direction: column;
-  margin-top: 23px;
 }
 
 .page__sidebar-subscribe-field {
@@ -387,22 +406,25 @@
 }
 
 .page__sidebar-tags {
-  margin: 0 1px 56px;
+  margin: 0 1px 61px;
 
   /* для лучшей визуализации границ: */
   /* outline: 1px dashed purple; */
 }
 
+/* модификатор */
+.page__sidebar-title_tags {
+  margin-bottom: 25px;
+}
+
 .page__sidebar-tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 26px;
+  gap: 7px 6px;
   list-style-type: none;
 }
 
 .page__sidebar-tag-item {
-  min-height: 30px;
   padding: 3px 0;
   border: 3px solid #eee;
   font-size: 12px;
@@ -459,13 +481,17 @@
   /* outline: 1px dashed purple; */
 }
 
+/* модификатор */
+.page__sidebar-title_themes {
+  margin-bottom: 24px;
+}
+
 .page__sidebar-themes-list {
   margin-top: 12px;
   list-style-type: none;
 }
 
 .page__sidebar-themes-item {
-  display: block;
   padding-bottom: 14px;
   border-bottom: 1px solid #eee;
   font-size: 14px;
