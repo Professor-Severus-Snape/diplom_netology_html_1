@@ -3,29 +3,27 @@
 }
 
 @font-face {
-  font-family: "opensans";
-  src: local("opensans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "opensans";
-  src: local("opensans"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("../fonts/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-/* универсальный селектор -> противоречит методологии БЭМ? */
-/* надо ли от него избавляться??? */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: "opensans", "arial", sans-serif;  /* указывать для * или body ??? */
+  font-family: "OpenSans", "Arial", sans-serif;  /* указывать для * или body ??? */
 }
 
 /* ============================== header ============================== */
@@ -37,7 +35,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
-  background-color: #666;
+  background-color: #666666;
 }
 
 /* добавление маски: */
@@ -74,7 +72,7 @@
 }
 
 .header__logo-link {
-  color: #fff;  /* на случай, если логотип не загрузится */
+  color: #ffffff;  /* на случай, если логотип не загрузится */
 }
 
 .header__logo-image {
@@ -91,7 +89,7 @@
   font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
 }
 
 .header__link:hover {
@@ -105,7 +103,7 @@
   line-height: 75px;
   text-transform: uppercase;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 
   /* для лучшей визуализации границ: */
   /* outline: 2px dashed yellow; */
@@ -170,7 +168,7 @@
 
 .page__main-tag-list {
   display: flex;
-  flex-wrap: wrap;  /* разместит теги, если они будут в несколько строк */
+  flex-wrap: wrap;
   gap: 0 20px;
   list-style-type: none;
 }
@@ -192,7 +190,6 @@
 }
 
 .page__main-title {
-  /* 35px - чтобы заголовок в статье №6 переносился по макету */
   margin: 10px 35px 28px 0;
   line-height: 24px;
 }
@@ -202,7 +199,7 @@
   font-size: 20px;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
   color: #0f0d0e;
 }
 
@@ -217,13 +214,13 @@
 }
 
 .page__main-date {
-  color: #888;
+  color: #888888;
 }
 
 .page__main-author {
   margin-left: 13px;
   font-weight: 700;
-  color: #000;
+  color: #000000;
 }
 
 .page__main-content {
@@ -250,7 +247,6 @@
   color: #0f0d0e;
 }
 
-/* модификатор */
 .page__sidebar-title_posts {
   margin-bottom: 29px;
 }
@@ -309,7 +305,7 @@
 
 .page__sidebar-post-title-link {
   text-decoration: none;
-  color: #000;
+  color: #000000;
 }
 
 .page__sidebar-post-title-link:hover {
@@ -354,6 +350,7 @@
 
 .page__sidebar-search-button:hover {
   background-color: #323232;
+  cursor: pointer;
 }
 
 .page__sidebar-subscribe {
@@ -364,7 +361,6 @@
   /* outline: 1px dashed purple; */
 }
 
-/* модификатор */
 .page__sidebar-title_subscribe {
   margin-bottom: 23px;
 }
@@ -397,12 +393,13 @@
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #fff;
+  color: #ffffff;
   background-color: var(--color-style);
 }
 
 .page__sidebar-subscribe-button:hover {
   background-color: #323232;
+  cursor: pointer;
 }
 
 .page__sidebar-tags {
@@ -412,7 +409,6 @@
   /* outline: 1px dashed purple; */
 }
 
-/* модификатор */
 .page__sidebar-title_tags {
   margin-bottom: 25px;
 }
@@ -426,7 +422,7 @@
 
 .page__sidebar-tag-item {
   padding: 3px 0;
-  border: 3px solid #eee;
+  border: 3px solid #eeeeee;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -481,7 +477,6 @@
   /* outline: 1px dashed purple; */
 }
 
-/* модификатор */
 .page__sidebar-title_themes {
   margin-bottom: 24px;
 }
@@ -493,7 +488,7 @@
 
 .page__sidebar-themes-item {
   padding-bottom: 14px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   font-size: 14px;
   font-weight: 700;
 }
@@ -504,7 +499,7 @@
 
 .page__sidebar-themes-link {
   text-decoration: none;
-  color: #000;
+  color: #000000;
 }
 
 .page__sidebar-themes-link:hover {
@@ -512,7 +507,7 @@
 }
 
 .page__sidebar-themes-score {
-  margin-left: 6px;
+  margin-left: 1px;
   font-size: 12px;
   font-weight: 700;
   vertical-align: top;
@@ -578,5 +573,5 @@
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-  color: #999;
+  color: #999999;
 }
