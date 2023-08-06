@@ -1,0 +1,11 @@
+.article-tags__link {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-style);
+}
+
+.article-tags__link:hover {
+  text-decoration: underline;
+}

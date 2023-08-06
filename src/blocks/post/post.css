@@ -1,0 +1,9 @@
+.post {
+  display: flex;
+  align-items: flex-start;
+  gap: 19px;
+}
+
+.post:not(:last-child) {
+  margin-bottom: 22px;
+}

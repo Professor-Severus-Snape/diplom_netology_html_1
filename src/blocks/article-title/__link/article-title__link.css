@@ -1,0 +1,13 @@
+.article-title__link {
+  display: block;
+
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  color: #0f0d0e;
+}
+
+.article-title__link:hover {
+  color: var(--color-style);
+}

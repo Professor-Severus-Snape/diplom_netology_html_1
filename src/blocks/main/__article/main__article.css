@@ -1,0 +1,4 @@
+/* микс для внешней геометрии: */
+.main__article:not(:last-child) {
+  margin-bottom: 60px;
+}

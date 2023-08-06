@@ -1,0 +1,13 @@
+.tags__item {
+  padding: 3px 13px 4px 14px;
+  border: 3px solid #eeeeee;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tags__item:hover {
+  border: 3px solid var(--color-style);
+}

@@ -1,0 +1,10 @@
+.title-first {
+  width: 690px;
+  margin: 0 auto;
+
+  font-size: 45px;
+  line-height: 75px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}

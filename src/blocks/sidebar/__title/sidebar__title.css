@@ -1,0 +1,16 @@
+.sidebar__title {
+  font-size: 14px;
+  line-height: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0f0d0e;
+}
+
+.sidebar__title::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin: 13px auto 0;
+  background-color: rgba(181, 159, 91, 0.4);
+}

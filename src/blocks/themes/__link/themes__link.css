@@ -1,0 +1,8 @@
+.themes__link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.themes__link:hover {
+  color: var(--color-style);
+}

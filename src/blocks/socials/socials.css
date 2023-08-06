@@ -1,0 +1,11 @@
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+
+  padding: 33px;
+
+  background-color: #f4f7f6;
+  list-style-type: none;
+}

@@ -1,0 +1,8 @@
+.post-title__link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.post-title__link:hover {
+  color: var(--color-style);
+}

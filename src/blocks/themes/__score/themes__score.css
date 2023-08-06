@@ -1,0 +1,8 @@
+.themes__score {
+  margin-left: 1px;
+
+  font-size: 12px;
+  font-weight: 700;
+  vertical-align: top;
+  color: var(--color-style);
+}

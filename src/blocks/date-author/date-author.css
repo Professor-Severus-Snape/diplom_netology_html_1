@@ -1,0 +1,7 @@
+.date-author {
+  display: flex;
+  gap: 13px;
+  padding-bottom: 46px;
+  
+  font-size: 12px;
+}
